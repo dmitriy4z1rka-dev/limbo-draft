@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Навигация - Лимбо</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 50px;
+        }
+
+        .logo img {
+            height: 120px;
+            filter: drop-shadow(0 0 30px rgba(255, 107, 53, 0.6));
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        p {
+            font-size: 1.3rem;
+            color: #b8c1ec;
+            margin-bottom: 60px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .link-card {
+            background: linear-gradient(135deg, #1a2142 0%, #151b3d 100%);
+            border-radius: 25px;
+            padding: 50px 40px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.4s;
+            border: 2px solid rgba(255, 107, 53, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 25px;
+            padding: 2px;
+            background: linear-gradient(135deg, #ff6b35, #f7931e, #a855f7);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .link-card:hover::before {
+            opacity: 1;
+        }
+
+        .link-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(255, 107, 53, 0.4);
+        }
+
+        .link-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 20px rgba(255, 107, 53, 0.5));
+        }
+
+        .link-card h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #ff6b35;
+        }
+
+        .link-card .description {
+            color: #b8c1ec;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .link-url {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(255, 107, 53, 0.1);
+            border-radius: 25px;
+            color: #00d9ff;
+            font-family: monospace;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+        }
+
+        .footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 2px solid rgba(255, 107, 53, 0.2);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #b8c1ec;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1.1rem;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .link-card {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="images/1.png" alt="Лимбо">
+        </div>
+
+        <h1>Добро пожаловать в систему Лимбо</h1>
+        <p>Выберите нужный раздел</p>
+
+        <div class="links-grid">
+            <a href="index.html" class="link-card">
+                <div class="link-icon">🏠</div>
+                <h2>Главная страница</h2>
+                <p class="description">Лендинг компьютерного клуба с информацией о залах, ценах и контактах</p>
+                <span class="link-url">index.html</span>
+            </a>
+
+            <a href="booking.html" class="link-card">
+                <div class="link-icon">📅</div>
+                <h2>Бронирование</h2>
+                <p class="description">Форма для создания заявки на бронирование места в клубе</p>
+                <span class="link-url">booking.html</span>
+            </a>
+
+            <a href="admin.html" class="link-card">
+                <div class="link-icon">⚙️</div>
+                <h2>Админ-панель</h2>
+                <p class="description">Управление заявками, статистика и настройки системы</p>
+                <span class="link-url">admin.html</span>
+            </a>
+        </div>
+
+        <div class="footer">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span>+7 (951) 031-63-63</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>ул. Берёзка, 2/4, Оренбург</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🕐</span>
+                    <span>Круглосуточно</span>
+                </div>
+            </div>
+            <p style="font-size: 0.9rem; color: #6b7280;">© 2024 Компьютерный клуб "Лимбо"</p>
+        </div>
+    </div>
+</body>
+</html>

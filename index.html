@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Лимбо - Компьютерный клуб в Оренбурге</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/1.png" alt="Лимбо" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <a href="#about">О клубе</a>
+                    <a href="#halls">Залы</a>
+                    <a href="#prices">Цены</a>
+                    <a href="#contacts">Контакты</a>
+                </nav>
+                <a href="tel:+79510316363" class="header-phone">+7 (951) 031-63-63</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Добро пожаловать в <span class="highlight">Лимбо</span></h1>
+                <p class="hero-subtitle">Компьютерный клуб • Киберспорт • Интернет-кафе</p>
+                <p class="hero-description">Мощные игровые ПК, PlayStation и комфортная атмосфера для игр 24/7</p>
+                <div class="hero-buttons">
+                    <a href="#prices" class="btn btn-primary">Посмотреть цены</a>
+                    <a href="tel:+79510316363" class="btn btn-secondary">Позвонить</a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">🕐</span>
+                        <span>Круглосуточно</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎮</span>
+                        <span>PlayStation залы</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <span>Мощные ПК</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">О клубе</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🎯</div>
+                    <h3>Киберспорт</h3>
+                    <p>Профессиональное оборудование для тренировок и турниров</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🖥️</div>
+                    <h3>Современные ПК</h3>
+                    <p>Топовые конфигурации для любых игр на максимальных настройках</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">🎮</div>
+                    <h3>PlayStation</h3>
+                    <p>Эксклюзивные залы с консолями PlayStation</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">☕</div>
+                    <h3>Комфорт</h3>
+                    <p>Удобные кресла, кондиционирование, напитки</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="halls" class="halls">
+        <div class="container">
+            <h2 class="section-title">Наши залы</h2>
+            <div class="halls-grid">
+                <div class="hall-card">
+                    <div class="hall-badge">Premium</div>
+                    <h3>VIP NEW</h3>
+                    <p class="hall-description">Новейшее оборудование премиум-класса</p>
+                    <div class="hall-price">от 200 ₽/час</div>
+                </div>
+                <div class="hall-card">
+                    <div class="hall-badge">Popular</div>
+                    <h3>VIP</h3>
+                    <p class="hall-description">Топовые конфигурации для профессионалов</p>
+                    <div class="hall-price">от 180 ₽/час</div>
+                </div>
+                <div class="hall-card">
+                    <h3>Bootcamp</h3>
+                    <p class="hall-description">Зал для командных тренировок</p>
+                    <div class="hall-price">от 180 ₽/час</div>
+                </div>
+                <div class="hall-card">
+                    <h3>Comfort</h3>
+                    <p class="hall-description">Комфортный зал для casual игр</p>
+                    <div class="hall-price">от 140 ₽/час</div>
+                </div>
+                <div class="hall-card">
+                    <h3>Standart</h3>
+                    <p class="hall-description">Базовые конфигурации</p>
+                    <div class="hall-price">от 130 ₽/час</div>
+                </div>
+                <div class="hall-card hall-card-ps">
+                    <div class="hall-badge">PlayStation</div>
+                    <h3>PS Залы</h3>
+                    <p class="hall-description">PlayStation 5 и эксклюзивы</p>
+                    <div class="hall-price">от 300 ₽/час</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="prices" class="prices">
+        <div class="container">
+            <h2 class="section-title">Популярные тарифы</h2>
+            <div class="price-tabs">
+                <button class="price-tab active" data-hall="vip-new">VIP NEW</button>
+                <button class="price-tab" data-hall="vip">VIP</button>
+                <button class="price-tab" data-hall="bootcamp">Bootcamp</button>
+                <button class="price-tab" data-hall="comfort">Comfort</button>
+                <button class="price-tab" data-hall="standart">Standart</button>
+                <button class="price-tab" data-hall="ps">PlayStation</button>
+            </div>
+
+            <div class="price-content" id="vip-new">
+                <div class="price-grid">
+                    <div class="price-card">
+                        <div class="price-badge">Выгодно</div>
+                        <h3>Ночной</h3>
+                        <div class="price-value">900 ₽</div>
+                        <p class="price-time">22:00 — 08:00</p>
+                        <ul class="price-features">
+                            <li>10 часов игры</li>
+                            <li>Премиум оборудование</li>
+                            <li>90 ₽/час</li>
+                        </ul>
+                    </div>
+                    <div class="price-card price-card-featured">
+                        <div class="price-badge">Лучшее предложение</div>
+                        <h3>Сутки на неделю</h3>
+                        <div class="price-value">2700 ₽</div>
+                        <p class="price-time">24 часа в течение недели</p>
+                        <ul class="price-features">
+                            <li>24 часа игры</li>
+                            <li>Распределите как удобно</li>
+                            <li>112,5 ₽/час</li>
+                        </ul>
+                    </div>
+                    <div class="price-card">
+                        <h3>12 часов</h3>
+                        <div class="price-value">1600 ₽</div>
+                        <p class="price-time">Без ограничений по времени суток</p>
+                        <ul class="price-features">
+                            <li>12 часов игры</li>
+                            <li>Гибкое использование</li>
+                            <li>133 ₽/час</li>
+                        </ul>
+                    </div>
+                    <div class="price-card">
+                        <h3>5 часов</h3>
+                        <div class="price-value">750 ₽</div>
+                        <p class="price-time">Популярный пакет</p>
+                        <ul class="price-features">
+                            <li>5 часов игры</li>
+                            <li>150 ₽/час</li>
+                        </ul>
+                    </div>
+                    <div class="price-card">
+                        <h3>3 часа</h3>
+                        <div class="price-value">500 ₽</div>
+                        <ul class="price-features">
+                            <li>3 часа игры</li>
+                            <li>167 ₽/час</li>
+                        </ul>
+                    </div>
+                    <div class="price-card">
+                        <h3>1 час</h3>
+                        <div class="price-value">200 ₽</div>
+                        <ul class="price-features">
+                            <li>Почасовая оплата</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-content hidden" id="vip">
+                <div class="price-grid">
+                    <div class="price-card">
+                        <div class="price-badge">Выгодно</div>
+                        <h3>Ночной</h3>
+                        <div class="price-value">800 ₽</div>
+                        <p class="price-time">22:00 — 08:00</p>
+                    </div>
+                    <div class="price-card price-card-featured">
+                        <div class="price-badge">Лучшее предложение</div>
+                        <h3>Сутки на неделю</h3>
+                        <div class="price-value">2500 ₽</div>
+                        <p class="price-time">24 часа в течение недели</p>
+                    </div>
+                    <div class="price-card">
+                        <h3>12 часов</h3>
+                        <div class="price-value">1400 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>5 часов</h3>
+                        <div class="price-value">650 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>3 часа</h3>
+                        <div class="price-value">450 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>1 час</h3>
+                        <div class="price-value">180 ₽</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-content hidden" id="bootcamp">
+                <div class="price-grid">
+                    <div class="price-card">
+                        <div class="price-badge">Выгодно</div>
+                        <h3>Ночной</h3>
+                        <div class="price-value">800 ₽</div>
+                        <p class="price-time">22:00 — 08:00</p>
+                    </div>
+                    <div class="price-card price-card-featured">
+                        <div class="price-badge">Лучшее предложение</div>
+                        <h3>Сутки на неделю</h3>
+                        <div class="price-value">2500 ₽</div>
+                        <p class="price-time">24 часа в течение недели</p>
+                    </div>
+                    <div class="price-card">
+                        <h3>12 часов</h3>
+                        <div class="price-value">1400 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>5 часов</h3>
+                        <div class="price-value">650 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>3 часа</h3>
+                        <div class="price-value">450 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>1 час</h3>
+                        <div class="price-value">180 ₽</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-content hidden" id="comfort">
+                <div class="price-grid">
+                    <div class="price-card">
+                        <div class="price-badge">Выгодно</div>
+                        <h3>Ночной</h3>
+                        <div class="price-value">600 ₽</div>
+                        <p class="price-time">22:00 — 08:00</p>
+                    </div>
+                    <div class="price-card price-card-featured">
+                        <div class="price-badge">Лучшее предложение</div>
+                        <h3>Сутки на неделю</h3>
+                        <div class="price-value">1800 ₽</div>
+                        <p class="price-time">24 часа в течение недели</p>
+                    </div>
+                    <div class="price-card">
+                        <h3>12 часов</h3>
+                        <div class="price-value">1050 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>5 часов</h3>
+                        <div class="price-value">520 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>3 часа</h3>
+                        <div class="price-value">350 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>1 час</h3>
+                        <div class="price-value">140 ₽</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-content hidden" id="standart">
+                <div class="price-grid">
+                    <div class="price-card">
+                        <div class="price-badge">Выгодно</div>
+                        <h3>Ночной</h3>
+                        <div class="price-value">550 ₽</div>
+                        <p class="price-time">22:00 — 08:00</p>
+                    </div>
+                    <div class="price-card price-card-featured">
+                        <div class="price-badge">Лучшее предложение</div>
+                        <h3>Сутки на неделю</h3>
+                        <div class="price-value">1700 ₽</div>
+                        <p class="price-time">24 часа в течение недели</p>
+                    </div>
+                    <div class="price-card">
+                        <h3>12 часов</h3>
+                        <div class="price-value">1000 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>5 часов</h3>
+                        <div class="price-value">480 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>3 часа</h3>
+                        <div class="price-value">320 ₽</div>
+                    </div>
+                    <div class="price-card">
+                        <h3>1 час</h3>
+                        <div class="price-value">130 ₽</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-content hidden" id="ps">
+                <div class="price-grid">
+                    <div class="price-card">
+                        <h3>Зал VIP PS</h3>
+                        <div class="price-value">400 ₽/час</div>
+                        <p class="price-desc">Премиум PlayStation зал</p>
+                        <ul class="price-list">
+                            <li>1 час — 400 ₽</li>
+                            <li>3 часа — 900 ₽</li>
+                            <li>5 часов — 1300 ₽</li>
+                            <li>Ночной — 1800 ₽</li>
+                        </ul>
+                    </div>
+                    <div class="price-card">
+                        <h3>Зал PS</h3>
+                        <div class="price-value">300 ₽/час</div>
+                        <p class="price-desc">Стандартный PlayStation зал</p>
+                        <ul class="price-list">
+                            <li>1 час — 300 ₽</li>
+                            <li>3 часа — 650 ₽</li>
+                            <li>5 часов — 950 ₽</li>
+                            <li>Ночной — 1500 ₽</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contacts-grid">
+                <div class="contacts-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Адрес</h3>
+                            <p>г. Оренбург, ул. Берёзка, 2/4<br>цокольный этаж</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h3>Телефон</h3>
+                            <p><a href="tel:+79510316363">+7 (951) 031-63-63</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <h3>Режим работы</h3>
+                            <p>Круглосуточно, 24/7</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://vk.ru/limbo.club" target="_blank" class="social-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.81 14.48h-1.75c-.63 0-.82-.5-1.95-1.64-1-.96-1.44-1.09-1.69-1.09-.35 0-.44.09-.44.53v1.5c0 .4-.13.65-1.19.65-1.78 0-3.75-.92-5.13-2.64-2.08-2.48-2.65-4.36-2.65-4.74 0-.25.09-.49.53-.49h1.75c.39 0 .54.18.69.6.75 2.2 2.01 4.13 2.53 4.13.19 0 .29-.09.29-.58v-2.27c-.06-1.06-.62-1.15-.62-1.53 0-.2.17-.39.43-.39h2.75c.33 0 .45.17.45.56v3.06c0 .33.15.45.24.45.19 0 .35-.12.71-.48 1.11-1.25 1.91-3.18 1.91-3.18.1-.23.3-.45.7-.45h1.75c.52 0 .64.27.52.63-.21.88-2.23 3.54-2.23 3.54-.16.26-.22.37 0 .66.16.21.69.68 1.05 1.09.65.75 1.14 1.38 1.27 1.82.14.44-.07.66-.51.66z"/>
+                            </svg>
+                            VK
+                        </a>
+                        <a href="https://t.me/Limbo_56" target="_blank" class="social-btn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.97 1.25-5.56 3.67-.53.36-.98.54-1.36.53-.45-.01-1.31-.25-1.95-.46-.78-.25-1.4-.38-1.35-.81.03-.22.33-.45.91-.69 3.56-1.55 5.93-2.57 7.13-3.07 3.39-1.41 4.1-1.65 4.56-1.66.1 0 .33.02.47.14.12.1.15.24.17.34-.01.08.01.24-.01.37z"/>
+                            </svg>
+                            Telegram
+                        </a>
+                    </div>
+                </div>
+                <div class="contacts-map">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A8e5d5e8c3b8f0e0c9e8f0e0c9e8f0e0c&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/1.png" alt="Лимбо" class="footer-logo-img">
+                    <p>Компьютерный клуб в Оренбурге</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">О клубе</a>
+                    <a href="#halls">Залы</a>
+                    <a href="#prices">Цены</a>
+                    <a href="#contacts">Контакты</a>
+                </div>
+                <div class="footer-contact">
+                    <p>+7 (951) 031-63-63</p>
+                    <p>ул. Берёзка, 2/4</p>
+                    <p>Круглосуточно</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Компьютерный клуб "Лимбо". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

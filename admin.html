@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Админ-панель - Лимбо</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/1.png" alt="Лимбо" class="logo-img">
+                </div>
+                <div class="header-title">
+                    <h1>Панель администратора</h1>
+                </div>
+                <button class="btn-logout" onclick="logout()">Выход</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <nav class="admin-nav">
+                <button class="nav-item active" data-tab="bookings" onclick="switchTab('bookings')">
+                    <span class="nav-icon">📅</span>
+                    <span>Бронирования</span>
+                    <span class="badge" id="bookingsCount">0</span>
+                </button>
+                <button class="nav-item" data-tab="statistics" onclick="switchTab('statistics')">
+                    <span class="nav-icon">📊</span>
+                    <span>Статистика</span>
+                </button>
+                <button class="nav-item" data-tab="settings" onclick="switchTab('settings')">
+                    <span class="nav-icon">⚙️</span>
+                    <span>Настройки</span>
+                </button>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <!-- Вкладка: Бронирования -->
+            <div class="tab-content active" id="bookings">
+                <div class="content-header">
+                    <h2>Заявки на бронирование</h2>
+                    <div class="header-actions">
+                        <div class="filter-group">
+                            <label>Статус:</label>
+                            <select id="statusFilter" onchange="filterBookings()">
+                                <option value="all">Все</option>
+                                <option value="new">Новые</option>
+                                <option value="confirmed">Подтверждённые</option>
+                                <option value="completed">Завершённые</option>
+                                <option value="cancelled">Отменённые</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>Зал:</label>
+                            <select id="hallFilter" onchange="filterBookings()">
+                                <option value="all">Все залы</option>
+                                <option value="vip-new">VIP NEW</option>
+                                <option value="vip">VIP</option>
+                                <option value="bootcamp">Bootcamp</option>
+                                <option value="comfort">Comfort</option>
+                                <option value="standart">Standart</option>
+                                <option value="ps">PlayStation</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-refresh" onclick="loadBookings()">
+                            <span>🔄</span> Обновить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bookings-grid" id="bookingsGrid">
+                    <!-- Здесь будут отображаться заявки -->
+                </div>
+            </div>
+
+            <!-- Вкладка: Статистика -->
+            <div class="tab-content" id="statistics">
+                <div class="content-header">
+                    <h2>Статистика</h2>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Всего бронирований</div>
+                            <div class="stat-value" id="totalBookings">0</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">⏰</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Новые заявки</div>
+                            <div class="stat-value" id="newBookings">0</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Подтверждённые</div>
+                            <div class="stat-value" id="confirmedBookings">0</div>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Ожидаемая выручка</div>
+                            <div class="stat-value" id="totalRevenue">0 ₽</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Популярные залы</h3>
+                    <div class="halls-chart" id="hallsChart"></div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>Бронирования по дням</h3>
+                    <div class="bookings-timeline" id="bookingsTimeline"></div>
+                </div>
+            </div>
+
+            <!-- Вкладка: Настройки -->
+            <div class="tab-content" id="settings">
+                <div class="content-header">
+                    <h2>Настройки системы</h2>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Уведомления</h3>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="emailNotifications" checked>
+                            <span>Email уведомления о новых бронированиях</span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="smsNotifications">
+                            <span>SMS уведомления</span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="soundNotifications" checked>
+                            <span>Звуковые уведомления</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Автоматическое подтверждение</h3>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="autoConfirm">
+                            <span>Автоматически подтверждать бронирования</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Рабочие часы</h3>
+                    <div class="setting-item">
+                        <p>Клуб работает круглосуточно (24/7)</p>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="saveSettings()">Сохранить настройки</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальное окно деталей бронирования -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content large">
+            <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+            <div id="bookingDetails"></div>
+        </div>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>

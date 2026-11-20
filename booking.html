@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Бронирование - Лимбо</title>
+    <link rel="stylesheet" href="booking-styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/1.png" alt="Лимбо" class="logo-img">
+                    </a>
+                </div>
+                <nav class="nav">
+                    <a href="index.html">Главная</a>
+                    <a href="index.html#halls">Залы</a>
+                    <a href="index.html#prices">Цены</a>
+                    <a href="booking.html" class="active">Бронирование</a>
+                </nav>
+                <a href="tel:+79510316363" class="header-phone">+7 (951) 031-63-63</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="booking-hero">
+        <div class="container">
+            <h1 class="page-title">Забронировать место</h1>
+            <p class="page-subtitle">Выберите удобное время и начните играть</p>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-layout">
+                <div class="booking-form-container">
+                    <form id="bookingForm" class="booking-form">
+                        <div class="form-step active" data-step="1">
+                            <h2 class="step-title">Выберите зал</h2>
+                            <div class="halls-selector">
+                                <label class="hall-option">
+                                    <input type="radio" name="hall" value="vip-new" data-price="200">
+                                    <div class="hall-option-content">
+                                        <div class="hall-badge premium">Premium</div>
+                                        <h3>VIP NEW</h3>
+                                        <p>Новейшее оборудование премиум-класса</p>
+                                        <div class="hall-price">от 200 ₽/час</div>
+                                    </div>
+                                </label>
+
+                                <label class="hall-option">
+                                    <input type="radio" name="hall" value="vip" data-price="180">
+                                    <div class="hall-option-content">
+                                        <div class="hall-badge popular">Popular</div>
+                                        <h3>VIP</h3>
+                                        <p>Топовые конфигурации для профессионалов</p>
+                                        <div class="hall-price">от 180 ₽/час</div>
+                                    </div>
+                                </label>
+
+                                <label class="hall-option">
+                                    <input type="radio" name="hall" value="bootcamp" data-price="180">
+                                    <div class="hall-option-content">
+                                        <h3>Bootcamp</h3>
+                                        <p>Зал для командных тренировок</p>
+                                        <div class="hall-price">от 180 ₽/час</div>
+                                    </div>
+                                </label>
+
+                                <label class="hall-option">
+                                    <input type="radio" name="hall" value="comfort" data-price="140">
+                                    <div class="hall-option-content">
+                                        <h3>Comfort</h3>
+                                        <p>Комфортный зал для casual игр</p>
+                                        <div class="hall-price">от 140 ₽/час</div>
+                                    </div>
+                                </label>
+
+                                <label class="hall-option">
+                                    <input type="radio" name="hall" value="standart" data-price="130">
+                                    <div class="hall-option-content">
+                                        <h3>Standart</h3>
+                                        <p>Базовые конфигурации</p>
+                                        <div class="hall-price">от 130 ₽/час</div>
+                                    </div>
+                                </label>
+
+                                <label class="hall-option hall-ps">
+                                    <input type="radio" name="hall" value="ps" data-price="300">
+                                    <div class="hall-option-content">
+                                        <div class="hall-badge ps">PlayStation</div>
+                                        <h3>PS Залы</h3>
+                                        <p>PlayStation 5 и эксклюзивы</p>
+                                        <div class="hall-price">от 300 ₽/час</div>
+                                    </div>
+                                </label>
+                            </div>
+                            <button type="button" class="btn btn-next" onclick="nextStep()">Далее</button>
+                        </div>
+
+                        <div class="form-step" data-step="2">
+                            <h2 class="step-title">Выберите тариф</h2>
+                            <div id="tariffsContainer" class="tariffs-selector"></div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-back" onclick="prevStep()">Назад</button>
+                                <button type="button" class="btn btn-next" onclick="nextStep()">Далее</button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="3">
+                            <h2 class="step-title">Дата и время</h2>
+                            <div class="datetime-selector">
+                                <div class="form-group">
+                                    <label for="bookingDate">Дата посещения</label>
+                                    <input type="date" id="bookingDate" name="date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="bookingTime">Время начала</label>
+                                    <input type="time" id="bookingTime" name="time" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="computerNumber">Номер компьютера (опционально)</label>
+                                    <input type="number" id="computerNumber" name="computer" min="1" max="50" placeholder="Любой">
+                                </div>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-back" onclick="prevStep()">Назад</button>
+                                <button type="button" class="btn btn-next" onclick="nextStep()">Далее</button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="4">
+                            <h2 class="step-title">Ваши данные</h2>
+                            <div class="user-data">
+                                <div class="form-group">
+                                    <label for="userName">Имя *</label>
+                                    <input type="text" id="userName" name="name" required placeholder="Ваше имя">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userPhone">Телефон *</label>
+                                    <input type="tel" id="userPhone" name="phone" required placeholder="+7 (___) ___-__-__">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userEmail">Email (опционально)</label>
+                                    <input type="email" id="userEmail" name="email" placeholder="example@mail.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userComment">Комментарий</label>
+                                    <textarea id="userComment" name="comment" rows="3" placeholder="Дополнительные пожелания..."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-buttons">
+                                <button type="button" class="btn btn-back" onclick="prevStep()">Назад</button>
+                                <button type="submit" class="btn btn-submit">Забронировать</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="steps-indicator">
+                        <div class="step-dot active" data-step="1">
+                            <span class="step-number">1</span>
+                            <span class="step-label">Зал</span>
+                        </div>
+                        <div class="step-line"></div>
+                        <div class="step-dot" data-step="2">
+                            <span class="step-number">2</span>
+                            <span class="step-label">Тариф</span>
+                        </div>
+                        <div class="step-line"></div>
+                        <div class="step-dot" data-step="3">
+                            <span class="step-number">3</span>
+                            <span class="step-label">Дата</span>
+                        </div>
+                        <div class="step-line"></div>
+                        <div class="step-dot" data-step="4">
+                            <span class="step-number">4</span>
+                            <span class="step-label">Данные</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-summary">
+                    <div class="summary-card">
+                        <h3>Ваше бронирование</h3>
+                        <div class="summary-content">
+                            <div class="summary-item">
+                                <span class="summary-label">Зал:</span>
+                                <span class="summary-value" id="summaryHall">Не выбран</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Тариф:</span>
+                                <span class="summary-value" id="summaryTariff">Не выбран</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Дата:</span>
+                                <span class="summary-value" id="summaryDate">Не выбрана</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Время:</span>
+                                <span class="summary-value" id="summaryTime">Не выбрано</span>
+                            </div>
+                            <div class="summary-divider"></div>
+                            <div class="summary-total">
+                                <span class="total-label">Итого:</span>
+                                <span class="total-value" id="summaryTotal">0 ₽</span>
+                            </div>
+                        </div>
+                        <div class="summary-info">
+                            <p>💡 Бронирование бесплатное</p>
+                            <p>🎮 Оплата на месте</p>
+                            <p>⏰ Работаем круглосуточно</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <h4>Нужна помощь?</h4>
+                        <p>Звоните нам по телефону:</p>
+                        <a href="tel:+79510316363" class="contact-phone">+7 (951) 031-63-63</a>
+                        <div class="social-links-small">
+                            <a href="https://vk.ru/limbo.club" target="_blank">VK</a>
+                            <a href="https://t.me/Limbo_56" target="_blank">Telegram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <h2>Бронирование успешно!</h2>
+            <p>Мы отправили подтверждение на ваш телефон.</p>
+            <p class="modal-details">Ждём вас в клубе!</p>
+            <button class="btn btn-primary" onclick="closeModal()">Отлично</button>
+            <a href="index.html" class="modal-link">Вернуться на главную</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/1.png" alt="Лимбо" class="footer-logo-img">
+                    <p>Компьютерный клуб в Оренбурге</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Главная</a>
+                    <a href="index.html#halls">Залы</a>
+                    <a href="index.html#prices">Цены</a>
+                    <a href="booking.html">Бронирование</a>
+                </div>
+                <div class="footer-contact">
+                    <p>+7 (951) 031-63-63</p>
+                    <p>ул. Берёзка, 2/4</p>
+                    <p>Круглосуточно</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Компьютерный клуб "Лимбо". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="booking-script.js"></script>
+</body>
+</html>
