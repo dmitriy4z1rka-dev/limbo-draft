@@ -397,6 +397,10 @@ function checkNewBookings() {
 
 function playNotificationSound() {
     // Простой звуковой сигнал через Web Audio API
+    // Браузер не даёт запускать звук, пока пользователь не взаимодействовал со страницей
+    if (navigator.userActivation && !navigator.userActivation.hasBeenActive) {
+        return;
+    }
     try {
         const audioContext = new (window.AudioContext || window.webkitAudioContext)();
         const oscillator = audioContext.createOscillator();
